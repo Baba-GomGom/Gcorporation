@@ -1,27 +1,83 @@
-# Gcorporation
+# GCORP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+GCORP Frontend, this project contains one web application handling the GOMRI Corporation website:
+## Requirements
 
-## Development server
+The following is required to install and run Angular:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- `Git`
+- `NodeJS 10.1.x`
+- `NPM >= 12.0.0`
 
-## Code scaffolding
+Validate the setup by executing:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `git --version`
+- `node --version`
 
-## Build
+# Install (\*nix)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Download the source code:
 
-## Running unit tests
+```console
+$ git clone [repository] frontend
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Change directory:
 
-## Running end-to-end tests
+```console
+$ cd gcorp
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Fetch dependencies:
 
-## Further help
+```console
+$ npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Start the web server, the application will automatically reload if any of the source files change:
+
+```console
+$ npm start
+```
+
+##### Using the proxy file to re-route calls to the backend
+
+Start the application using the defualt proxy configuration. 
+
+    npm run ng serve --host dev.mylocal.com --port 4204 --proxy-config proxy.conf.json
+
+or simply
+
+    npm run start:proxy
+
+### Running the application locally against the different environments
+
+Target the test environment locally
+  
+    npm run start:test
+
+# Contribute
+
+Create a branch (if the feature comprises multiple commits):
+
+```console
+$ git checkout -b [feature]
+```
+
+Push the changes:
+
+```console
+$ git push origin [feature]
+```
+
+# Test
+
+Detailed information about writing and executing Angular tests is available in the official [documentation](https://angular.io/guide/testing).
+
+## Unit
+
+Run all the unit tests (in a given language):
+
+```console
+$ npm run ng test [b2c/shared/data-api]
+```
